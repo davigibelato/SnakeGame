@@ -30,6 +30,7 @@ public class App {
         SnakeGame snakeGame = new SnakeGame(larguraTela, alturaTela);
         frame.add(snakeGame);
         frame.pack();
+        snakeGame.requestFocus();
     }
 
 }
