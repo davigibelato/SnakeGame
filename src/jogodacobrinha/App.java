@@ -17,7 +17,7 @@ public class App {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int larguraTela = 600;
+        int larguraTela = 400;
         int alturaTela = larguraTela;
 
         JFrame frame = new JFrame("Snake");
