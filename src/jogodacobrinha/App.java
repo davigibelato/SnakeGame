@@ -1,21 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package jogodacobrinha;
 
-import javax.swing.*;
 
-/**
- *
- * @author Senai
- */
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 public class App {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         int larguraTela = 400;
         int alturaTela = larguraTela;
@@ -27,10 +20,22 @@ public class App {
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        SnakeGame snakeGame = new SnakeGame(larguraTela, alturaTela);
+        JPanel buttonPanel = new JPanel();
+        JButton closeButton = new JButton("Fechar");
+
+        closeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
+        buttonPanel.add(closeButton);
+        frame.add(buttonPanel, BorderLayout.SOUTH);
+
+        jogodacobrinha.SnakeGame snakeGame = new jogodacobrinha.SnakeGame(larguraTela, alturaTela);
         frame.add(snakeGame);
         frame.pack();
         snakeGame.requestFocus();
     }
-
 }
